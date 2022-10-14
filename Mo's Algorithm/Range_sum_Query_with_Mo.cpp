@@ -16,7 +16,7 @@ using namespace std;
 #define fast ios_base::sync_with_stdio(NULL);cin.tie(NULL);cout.tie( NULL);
 int t, cases;
 
-const int k = 200; //Block size, good approach can be sqrt(n*m/m)
+static int k = 200; //Block size
 
 struct queryData {
     int le, ri, idx;
@@ -39,6 +39,7 @@ public:
     void inputAndPerform(){
         int n,q;
         cin>>n>>q;
+        k = sqrt( ( (double)n * (double)q ) / (double)q );
         vector < queryData > qu (q+1);
         vector < int > ar (n+1), ans (q+1);
         for ( int i = 1; i <= n; i++ )cin>>ar [ i ];
