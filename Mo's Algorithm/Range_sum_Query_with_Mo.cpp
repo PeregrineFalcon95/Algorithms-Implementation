@@ -39,7 +39,7 @@ public:
     void inputAndPerform(){
         int n,q;
         cin>>n>>q;
-        k = sqrt( ( (double)n * (double)q ) / (double)q );
+        k = sqrt( 2.0 * n * n / q) + 2;
         vector < queryData > qu (q+1);
         vector < int > ar (n+1), ans (q+1);
         for ( int i = 1; i <= n; i++ )cin>>ar [ i ];
